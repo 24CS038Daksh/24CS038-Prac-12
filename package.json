@@ -1,0 +1,20 @@
+{
+  "name": "practical-12-ci-cd-pipeline",
+  "version": "1.0.0",
+  "description": "Practical 12: Automate testing and deployment using GitHub Actions CI/CD pipeline - Student: Daksh Karangiya (24CS038)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/task.test.js",
+    "test:fail": "node --test tests/broken.test.js",
+    "lint": "node lint-check.js",
+    "ci": "node run-ci-pipeline.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^23.11.1"
+  }
+}

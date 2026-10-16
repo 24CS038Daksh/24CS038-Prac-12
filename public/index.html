@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practical 12: GitHub Actions CI/CD Pipeline - 24CS038</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header with Student Credentials -->
+    <header class="academic-header">
+      <div class="header-main">
+        <h1>Practical - 12: Automate Testing and Deployment using CI/CD Pipeline</h1>
+        <p class="subtitle">GitHub Actions Workflow: Automated Linting, Dependency Installation, and Automated Testing on Push / PR</p>
+      </div>
+      <div class="student-badge">
+        <div><strong>Student ID:</strong> <span class="highlight">24CS038</span></div>
+        <div><strong>Student Name:</strong> Daksh Karangiya</div>
+        <div><strong>Course:</strong> Advance Web Development (ITUE301)</div>
+        <div><strong>Pipeline Engine:</strong> <span class="status-online">● GitHub Actions Runner (Node 20)</span></div>
+      </div>
+    </header>
+
+    <!-- GitHub Actions Pipeline Status Bar -->
+    <div class="repo-bar">
+      <div class="repo-info">
+        <span class="repo-icon">🐙</span>
+        <span class="repo-name">dakshkarangiya / <strong>task-management-ci</strong></span>
+        <span class="branch-pill">main</span>
+        <span class="trigger-pill">on: [push, pull_request]</span>
+      </div>
+      <div class="badge-preview">
+        <span class="badge-label">Status Badge:</span>
+        <span id="pipeline-status-badge" class="gh-badge badge-passing">build | passing</span>
+      </div>
+    </div>
+
+    <!-- Architecture & Workflow Flow Card -->
+    <div class="card">
+      <div class="card-header">
+        <h2>CI/CD Pipeline Architecture & Execution Flow</h2>
+        <span class="pill">.github/workflows/ci.yml</span>
+      </div>
+      <div class="pipeline-flow">
+        <div class="flow-node trigger-node">
+          <div class="node-icon">🚀</div>
+          <strong>Trigger</strong>
+          <code>git push origin main</code>
+        </div>
+        <div class="flow-connector">➔</div>
+        <div class="flow-node job-node">
+          <div class="node-icon">🔍</div>
+          <strong>Job 1: lint</strong>
+          <span>Syntax & Code Quality</span>
+        </div>
+        <div class="flow-connector">➔</div>
+        <div class="flow-node job-node">
+          <div class="node-icon">📦</div>
+          <strong>Job 2: build-and-test</strong>
+          <span>Node 20 + npm install</span>
+        </div>
+        <div class="flow-connector">➔</div>
+        <div class="flow-node test-node">
+          <div class="node-icon">🧪</div>
+          <strong>Automated Tests</strong>
+          <span>node:test suite</span>
+        </div>
+        <div class="flow-connector">➔</div>
+        <div class="flow-node result-node">
+          <div id="flow-result-icon" class="node-icon success">✔</div>
+          <strong id="flow-result-text">Status: PASSED</strong>
+          <span id="flow-result-sub">Green Checkmark</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pipeline Run Switcher / Action Bar -->
+    <div class="actions-card">
+      <div class="actions-title">
+        <h3>Simulate Pipeline Runs (Push / PR Scenarios):</h3>
+      </div>
+      <div class="button-group">
+        <button id="btn-run-pass" class="btn btn-success active">
+          ✔ Run #2: Fixed Pipeline (All Tests Passing — Green Checkmark)
+        </button>
+        <button id="btn-run-fail" class="btn btn-danger">
+          ✖ Run #1: Deliberately Broken Test (Simulate Red X Failure)
+        </button>
+      </div>
+    </div>
+
+    <!-- Live Execution Step Details & Terminal Logs -->
+    <div class="card">
+      <div class="card-header">
+        <h2 id="run-title">Workflow Run #2: Commit c3e7d21 ("Fix assertion and restore pipeline")</h2>
+        <span id="run-status-pill" class="pill pill-success">✔ Status: Success (All Jobs Completed)</span>
+      </div>
+
+      <!-- Step Progress Tree -->
+      <div class="steps-list" id="steps-container">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Step Console Logs Viewer -->
+      <div class="console-box">
+        <div class="console-header">
+          <span>GitHub Actions Runner Console Output</span>
+          <span class="commit-hash" id="console-commit">Commit: c3e7d21 | Author: Daksh Karangiya (24CS038)</span>
+        </div>
+        <pre class="console-body" id="console-output"></pre>
+      </div>
+    </div>
+
+    <!-- Workflow YAML & Configuration Tabs -->
+    <div class="card">
+      <div class="card-header">
+        <h2>GitHub Actions Workflow Configuration (.github/workflows/ci.yml)</h2>
+        <span class="pill">YAML Manifest</span>
+      </div>
+      <div class="tabs-nav">
+        <button class="tab-btn active" id="tab-yaml-btn">.github/workflows/ci.yml</button>
+        <button class="tab-btn" id="tab-test-btn">tests/task.test.js (Passing)</button>
+        <button class="tab-btn" id="tab-broken-btn">tests/broken.test.js (Failing Demo)</button>
+      </div>
+      <pre class="code-viewer" id="yaml-viewer"></pre>
+    </div>
+
+    <!-- Academic Footer -->
+    <footer class="academic-footer">
+      <p>Practical 12: Automate Testing and Deployment using CI/CD Pipeline | ITUE301 Advance Web Development Framework</p>
+      <p>Student: <strong>Daksh Karangiya</strong> | Roll Number: <strong>24CS038</strong> | Academic Year 2026-27</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

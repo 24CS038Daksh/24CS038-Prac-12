@@ -1,0 +1,402 @@
+/* Academic Theme for Practical 12 - Student: Daksh Karangiya (24CS038) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #24292f;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.academic-header {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-left: 6px solid #2da44e;
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.academic-header h1 {
+  font-size: 1.45rem;
+  color: #1f2328;
+}
+
+.subtitle {
+  color: #57606a;
+  font-size: 0.92rem;
+}
+
+.student-badge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #f6f8fa;
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  border: 1px solid #d0d7de;
+}
+
+.highlight {
+  color: #0969da;
+  font-weight: 700;
+}
+
+.status-online {
+  color: #1a7f37;
+  font-weight: 600;
+}
+
+/* Repo Bar */
+.repo-bar {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 12px 20px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.repo-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.92rem;
+}
+
+.branch-pill {
+  background: #ddf4ff;
+  color: #0969da;
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.trigger-pill {
+  background: #eaeef2;
+  color: #57606a;
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.badge-preview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.gh-badge {
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-size: 0.82rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+.badge-passing {
+  background: #2ea44f;
+}
+
+.badge-failing {
+  background: #cf222e;
+}
+
+/* Cards */
+.card {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d0d7de;
+  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+.card-header h2 {
+  font-size: 1.15rem;
+  color: #1f2328;
+}
+
+.pill {
+  background: #eaeef2;
+  color: #57606a;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.pill-success {
+  background: #dafbe1;
+  color: #1a7f37;
+}
+
+.pill-failure {
+  background: #ffebe9;
+  color: #cf222e;
+}
+
+/* Pipeline Flow */
+.pipeline-flow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.flow-node {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 10px 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.82rem;
+  min-width: 140px;
+}
+
+.flow-node strong {
+  color: #1f2328;
+}
+
+.flow-node code {
+  color: #0969da;
+  font-size: 0.76rem;
+}
+
+.node-icon {
+  font-size: 1.3rem;
+  margin-bottom: 2px;
+}
+
+.node-icon.success {
+  color: #1a7f37;
+  font-weight: bold;
+}
+
+.node-icon.failure {
+  color: #cf222e;
+  font-weight: bold;
+}
+
+.flow-connector {
+  color: #8c959f;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Actions Card */
+.actions-card {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.actions-title h3 {
+  font-size: 0.95rem;
+  color: #1f2328;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 9px 16px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-success {
+  background: #2da44e;
+  color: #ffffff;
+}
+
+.btn-success:hover, .btn-success.active {
+  background: #2c974b;
+  box-shadow: 0 0 0 3px rgba(46,164,79,0.3);
+}
+
+.btn-danger {
+  background: #cf222e;
+  color: #ffffff;
+}
+
+.btn-danger:hover, .btn-danger.active {
+  background: #a40e26;
+  box-shadow: 0 0 0 3px rgba(207,34,46,0.3);
+}
+
+/* Steps list */
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.step-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 4px;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  font-size: 0.88rem;
+}
+
+.step-row.step-passed {
+  border-left: 4px solid #2da44e;
+}
+
+.step-row.step-failed {
+  border-left: 4px solid #cf222e;
+  background: #fff8f8;
+}
+
+.step-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.step-icon-pass { color: #1a7f37; font-weight: bold; }
+.step-icon-fail { color: #cf222e; font-weight: bold; }
+
+.step-time {
+  color: #57606a;
+  font-size: 0.8rem;
+}
+
+/* Console Box */
+.console-box {
+  background: #0d1117;
+  border-radius: 6px;
+  border: 1px solid #30363d;
+  overflow: hidden;
+}
+
+.console-header {
+  background: #161b22;
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  color: #8b949e;
+  border-bottom: 1px solid #30363d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.commit-hash {
+  color: #58a6ff;
+  font-family: monospace;
+}
+
+.console-body {
+  padding: 14px 18px;
+  color: #c9d1d9;
+  font-family: "SF Mono", "Menlo", monospace;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  max-height: 380px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+
+/* Code Viewer & Tabs */
+.tabs-nav {
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid #d0d7de;
+  margin-bottom: 16px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  border: none;
+  background: transparent;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #57606a;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+
+.tab-btn.active {
+  color: #0969da;
+  border-bottom-color: #0969da;
+}
+
+.code-viewer {
+  background: #0d1117;
+  color: #c9d1d9;
+  padding: 16px 20px;
+  border-radius: 6px;
+  font-family: "SF Mono", "Menlo", monospace;
+  font-size: 0.82rem;
+  overflow-x: auto;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+/* Footer */
+.academic-footer {
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid #d0d7de;
+  font-size: 0.82rem;
+  color: #57606a;
+}

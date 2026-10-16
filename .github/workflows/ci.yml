@@ -1,0 +1,73 @@
+name: Task Management CI Pipeline
+
+# ==============================================================================
+# Practical 12: Automate testing and deployment of application using CI/CD pipeline
+# Student: Daksh Karangiya | Roll Number: 24CS038 | Course: ITUE301
+# Triggers: Runs automatically on push to main and on pull requests targeting main
+# ==============================================================================
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # ----------------------------------------------------------------------------
+  # Job 1: Linter & Code Quality Check (Supplementary Problem 1)
+  # ----------------------------------------------------------------------------
+  lint:
+    name: Code Quality & Linting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20 Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Project Dependencies
+        run: npm install
+
+      - name: Run Linter Checks
+        run: npm run lint
+
+  # ----------------------------------------------------------------------------
+  # Job 2: Build & Automated Test Execution
+  # ----------------------------------------------------------------------------
+  build-and-test:
+    name: Build & Automated Tests
+    needs: lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20 Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Project Dependencies
+        run: npm install
+
+      - name: Execute Automated Test Suite
+        run: npm run test
+
+      - name: Publish CI Build Summary
+        if: success()
+        run: |
+          echo "========================================================"
+          echo "CI/CD PIPELINE STATUS: BUILD & TESTS PASSED (GREEN)"
+          echo "Student: Daksh Karangiya | Roll: 24CS038"
+          echo "Commit SHA: ${{ github.sha }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "========================================================"
